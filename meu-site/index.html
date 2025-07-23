@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PROJETO INTEGRADOR INS</title>
+
+    <link rel="icon" href="icon.png" type="image/png" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- Estilos do botão de tema -->
+    <link rel="stylesheet" href="theme-switch.css" />
+
+    <!-- Estilos do botão animado -->
+    <link rel="stylesheet" href="botao-remover.css" />
+
+    <!-- Tailwind Config -->
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              lightBg: "#f9fafb",
+              lightCard: "#ffffff",
+              lightHighlight: "#dbeafe",
+              lightAccent: "#3b82f6",
+              lightText: "#1f2937",
+              darkBg: "#1e1e2f",
+              darkCard: "#2b2c3e",
+              darkHighlight: "#3c3d5a",
+              darkAccent: "#7dd3fc",
+              darkText: "#d1d5db",
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+            animation: {
+              "fade-in-up": "fadeInUp 0.4s ease-out",
+            },
+            keyframes: {
+              fadeInUp: {
+                "0%": { opacity: "0", transform: "translateY(10px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-lightBg text-lightText font-sans dark:bg-darkBg dark:text-darkText transition-colors duration-500"
+  >
+    <!-- Header -->
+    <header
+      class="bg-lightCard dark:bg-darkCard px-6 py-4 flex justify-between items-center border-b border-lightHighlight dark:border-darkHighlight fixed w-full z-20"
+    >
+      <div class="flex items-center gap-3">
+        <i class="fas fa-file-pdf text-lightAccent dark:text-darkAccent text-2xl"></i>
+        <h1 class="text-2xl font-semibold tracking-tight">PROJETO INTEGRADOR INS</h1>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <input
+          type="file"
+          id="pdfInput"
+          accept="application/pdf"
+          class="file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-lightHighlight file:text-lightAccent hover:file:bg-lightAccent hover:file:text-lightBg dark:file:bg-darkHighlight dark:file:text-darkAccent dark:hover:file:bg-darkAccent dark:hover:file:text-darkBg transition"
+        />
+      </div>
+    </header>
+
+    <!-- Layout -->
+    <div class="flex pt-20 h-screen overflow-hidden">
+      <!-- Sidebar -->
+      <aside
+        class="w-64 bg-lightCard dark:bg-darkCard p-6 border-r border-lightHighlight dark:border-darkHighlight flex flex-col justify-between"
+      >
+        <div class="space-y-6">
+          <div
+            class="flex items-center text-lightAccent dark:text-darkAccent text-lg font-semibold gap-2"
+          >
+            <i class="fas fa-cogs"></i>
+            <span>Menu</span>
+          </div>
+          <nav class="space-y-2">
+            <!-- Alternador de Tema -->
+            <label class="flex items-center gap-3 mt-4 cursor-pointer">
+              <input
+                type="checkbox"
+                id="themeToggle"
+                class="theme-switch l"
+                aria-label="Alternar tema claro/escuro"
+              />
+              <span id="themeText" class="font-semibold text-lightAccent dark:text-darkAccent select-none">
+                Alterar Tema
+              </span>
+            </label>
+          </nav>
+        </div>
+        <footer class="text-sm text-gray-500 dark:text-gray-400">© 2025 PROJETO INTEGRADOR INS</footer>
+      </aside>
+
+      <!-- Main Content -->
+      <main
+        class="flex-1 p-8 overflow-y-auto space-y-8 bg-lightBg dark:bg-darkBg transition-colors duration-500"
+      >
+        <!-- Dropzone -->
+        <div
+          id="dropzone"
+          class="border-2 border-dashed border-lightAccent dark:border-darkAccent bg-lightCard dark:bg-darkCard rounded-lg p-10 text-center hover:bg-lightHighlight dark:hover:bg-darkHighlight transition cursor-pointer"
+        >
+          <i
+            class="fas fa-cloud-upload-alt fa-3x mb-3 text-lightAccent dark:text-darkAccent"
+          ></i>
+          <p class="font-medium">Arraste e solte o ficheiro PDF aqui</p>
+          <p class="text-sm text-gray-500 dark:text-gray-400">
+            ou use o botão acima para selecionar
+          </p>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="w-full h-3 rounded-full bg-lightHighlight dark:bg-darkHighlight overflow-hidden">
+          <div
+            id="progressBar"
+            class="h-full bg-lightAccent dark:bg-darkAccent w-0 transition-all duration-500 ease-in-out"
+          ></div>
+        </div>
+
+        <!-- Output -->
+        <section
+          id="output"
+          class="bg-lightCard dark:bg-darkCard rounded-xl shadow-inner p-6 min-h-[200px] transition"
+        >
+          <p class="text-gray-500 dark:text-gray-400">Nenhum PDF carregado.</p>
+        </section>
+      </main>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toastContainer" class="fixed bottom-6 right-6 space-y-2 z-50"></div>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+  </body>
+</html>
