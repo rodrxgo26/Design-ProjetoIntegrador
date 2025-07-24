@@ -141,15 +141,80 @@
 
         <!-- Seção 3: Perfil -->
         <section id="section-profile" class="section hidden">
-          <h2 class="text-2xl font-bold mb-4">Perfil do Utilizador</h2>
-          <p class="text-gray-500 dark:text-gray-400">Dados fictícios do perfil podem ir aqui.</p>
-        </section>
+  <h2 class="text-2xl font-bold mb-6">Perfil do Utilizador</h2>
+
+  <div class="bg-lightCard dark:bg-darkCard rounded-xl shadow p-6 space-y-6">
+    <!-- Informações do utilizador -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div>
+        <p class="text-sm text-gray-400">Nome</p>
+        <p class="font-semibold text-lightText dark:text-darkText">João Custódio</p>
+      </div>
+      <div>
+        <p class="text-sm text-gray-400">Email</p>
+        <p class="font-semibold text-lightText dark:text-darkText">joao.custodio@exemplo.com</p>
+      </div>
+      <div>
+        <p class="text-sm text-gray-400">Função</p>
+        <p class="font-semibold text-lightText dark:text-darkText">Estudante</p>
+      </div>
+      <div>
+        <p class="text-sm text-gray-400">Instituição</p>
+        <p class="font-semibold text-lightText dark:text-darkText">INS - Instituto de Ensino</p>
+      </div>
+    </div>
+
+    <!-- Histórico de PDFs -->
+    <div>
+      <h3 class="text-lg font-semibold mb-2 text-accent">Histórico de PDFs Ingeridos</h3>
+      <ul class="list-disc list-inside text-gray-500 dark:text-gray-400 text-sm space-y-1">
+        <li>relatorio_final.pdf (23/07/2025)</li>
+        <li>tcc_documento.pdf (20/07/2025)</li>
+        <li>artigo_cientifico.pdf (15/07/2025)</li>
+      </ul>
+    </div>
+
+    <!-- Simulação de edição -->
+    <div>
+      <button
+        class="mt-4 px-4 py-2 bg-lightAccent text-white rounded-md hover:bg-blue-600 transition"
+        onclick="showToast('Função de edição ainda não implementada.', 'error')"
+      >
+        Editar Perfil
+      </button>
+    </div>
+  </div>
+</section>
+
 
         <!-- Seção 4: Sobre -->
         <section id="section-about" class="section hidden">
-          <h2 class="text-2xl font-bold mb-4">Sobre o Projeto</h2>
-          <p class="text-gray-500 dark:text-gray-400">Este sistema faz parte do Projeto Integrador INS.</p>
-        </section>
+  <h2 class="text-2xl font-bold mb-4">Sobre o Projeto</h2>
+  <div class="space-y-4 text-gray-500 dark:text-gray-400 text-justify leading-relaxed">
+    <p>
+      O <strong>Projeto Integrador INS</strong> é uma iniciativa acadêmica desenvolvida no contexto de um trabalho interdisciplinar, com o objetivo de aplicar conhecimentos teóricos em um sistema funcional e útil.
+    </p>
+
+    <p>
+      Este sistema foi projetado para permitir a <strong>ingerência, visualização e análise de arquivos PDF</strong> enviados pelos utilizadores. A plataforma foi construída com foco em acessibilidade, usabilidade e design responsivo, utilizando tecnologias modernas como <strong>HTML, Tailwind CSS e JavaScript</strong>.
+    </p>
+
+    <p>
+      As funcionalidades incluem:
+      <ul class="list-disc list-inside mt-2">
+        <li>Upload e processamento de arquivos PDF</li>
+        <li>Interface clara com alternância de tema claro/escuro</li>
+        <li>Histórico de documentos ingeridos</li>
+        <li>Simulação de análise com retorno visual</li>
+      </ul>
+    </p>
+
+    <p>
+      Este projeto representa o esforço colaborativo de estudantes na resolução de um desafio prático, reforçando habilidades técnicas e trabalho em equipe.
+    </p>
+  </div>
+</section>
+
       </main>
     </div>
 
