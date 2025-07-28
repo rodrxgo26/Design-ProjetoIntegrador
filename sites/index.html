@@ -68,13 +68,28 @@
       </div>
 
       <div class="flex items-center gap-4">
-        <input
-          type="file"
-          id="pdfInput"
-          accept="application/pdf"
-          class="file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-lightHighlight file:text-lightAccent hover:file:bg-lightAccent hover:file:text-lightBg dark:file:bg-darkHighlight dark:file:text-darkAccent dark:hover:file:bg-darkAccent dark:hover:file:text-darkBg transition"
-        />
-      </div>
+  <input
+  type="file"
+  id="pdfInput"
+  accept="application/pdf"
+  class="file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-lightHighlight file:text-lightAccent hover:file:bg-lightAccent hover:file:text-lightBg dark:file:bg-darkHighlight dark:file:text-darkAccent dark:hover:file:bg-darkAccent dark:hover:file:text-darkBg transition"
+/>
+
+
+  <div id="authButtons" class="flex gap-3">
+    <a href="login.html" class="text-blue-500 hover:underline font-medium">Login</a>
+    <a href="register.html" class="text-blue-500 hover:underline font-medium">Registo</a>
+  </div>
+
+  <button
+    id="logoutBtn"
+    onclick="logout()"
+    class="hidden text-red-500 hover:underline font-medium"
+  >
+    Sair
+  </button>
+</div>
+
     </header>
 
     <!-- Layout -->
