@@ -185,21 +185,30 @@ dropzone.addEventListener("drop", (e) => {
 function applyTheme(theme) {
   const isDark = theme === "dark";
   document.documentElement.classList.toggle("dark", isDark);
+
+  // Agora, checked = modo escuro
   if (themeToggle) themeToggle.checked = isDark;
+  
   if (themeText) themeText.textContent = isDark ? "Modo Escuro" : "Modo Claro";
   localStorage.setItem("theme", theme);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const savedTheme = localStorage.getItem("theme") || "dark";
+  const savedTheme = localStorage.getItem("theme") || "light";
   applyTheme(savedTheme);
+
   if (themeToggle) {
+    // Ajustar o estado inicial do checkbox
+    themeToggle.checked = savedTheme === "dark";
+
+    // Corrigir lógica do evento
     themeToggle.addEventListener("change", () => {
       const newTheme = themeToggle.checked ? "dark" : "light";
       applyTheme(newTheme);
     });
   }
 });
+
 // Navegação entre seções
 const navButtons = document.querySelectorAll(".nav-link");
 const sections = document.querySelectorAll(".section");
