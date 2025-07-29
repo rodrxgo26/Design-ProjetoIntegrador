@@ -1,4 +1,3 @@
-// Tema claro/escuro
 function applyTheme(theme) {
   const isDark = theme === "dark";
   document.documentElement.classList.toggle("dark", isDark);
