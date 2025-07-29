@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
 :root {
-  --primary: #2563eb;
-  --primary-hover: #1e40af;
+  --primary: #1d4ed8;
+  --primary-hover: #2563eb;
   --text: #1f2937;
-  --background: #f3f4f6;
-  --glass: rgba(255, 255, 255, 0.6);
-  --border: rgba(0, 0, 0, 0.06);
+  --background: #f9fafb;
+  --glass: rgba(255, 255, 255, 0.65);
+  --border: rgba(0, 0, 0, 0.05);
   --radius: 12px;
 }
 
@@ -31,15 +31,15 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at 25% 35%, #dbeafe 0%, transparent 50%),
-              radial-gradient(circle at 75% 70%, #bfdbfe 0%, transparent 50%);
+  background: radial-gradient(circle at 20% 30%, #93c5fd 0%, transparent 40%),
+              radial-gradient(circle at 80% 70%, #bfdbfe 0%, transparent 40%);
   z-index: -1;
-  animation: floatBg 18s infinite alternate ease-in-out;
+  animation: moveBg 15s infinite alternate ease-in-out;
 }
 
-@keyframes floatBg {
+@keyframes moveBg {
   0% { transform: translate(0, 0); }
-  100% { transform: translate(30px, -20px); }
+  100% { transform: translate(-20px, 20px); }
 }
 
 .form-container {

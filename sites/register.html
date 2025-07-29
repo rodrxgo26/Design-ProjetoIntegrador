@@ -2,16 +2,38 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registo</title>
+  <link rel="stylesheet" href="css/register.css" />
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="flex items-center justify-center h-screen bg-gray-100">
-  <div class="bg-white p-8 rounded shadow-md w-96">
-    <h1 class="text-2xl font-bold mb-6 text-center">Registo</h1>
-    <input id="email" type="email" placeholder="Email" class="w-full mb-4 p-2 border rounded" />
-    <input id="password" type="password" placeholder="Palavra-passe" class="w-full mb-4 p-2 border rounded" />
-    <button onclick="register()" class="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700">Registar</button>
-    <p class="mt-4 text-sm text-center">Já tens conta? <a href="login.html" class="text-blue-500 underline">Entra aqui</a></p>
+<body>
+  <div class="background-gradient"></div>
+
+  <div class="form-container animate-fade-in">
+    <form class="form-card" onsubmit="event.preventDefault(); register();">
+      <h2 class="form-title">Criar Conta</h2>
+
+      <div class="input-group">
+        <input type="email" id="email" required />
+        <label for="email">Email</label>
+        <span class="icon">@</span>
+      </div>
+
+      <div class="input-group">
+        <input type="password" id="password" required />
+        <label for="password">Palavra-passe</label>
+        <span class="icon">🔒</span>
+      </div>
+
+      <button type="submit" class="btn-primary">
+        <span class="btn-text">Registar</span>
+        <span class="spinner"></span>
+        <span class="ripple"></span>
+      </button>
+
+      <p class="form-footer">Já tens conta? <a href="login.html">Entra aqui</a></p>
+    </form>
   </div>
 
   <script src="js/auth.js"></script>

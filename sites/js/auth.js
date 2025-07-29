@@ -50,6 +50,7 @@ function logout() {
   window.location.href = "login.html";
 }
 
+// Lógica ao carregar a página
 document.addEventListener("DOMContentLoaded", () => {
   const loggedIn = localStorage.getItem("loggedInUser");
   const input = document.getElementById("pdfInput");
@@ -57,13 +58,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const logoutBtn = document.getElementById("logoutBtn");
 
   if (loggedIn) {
-  if (authButtons) authButtons.classList.add("hidden");
-  if (logoutBtn) logoutBtn.classList.remove("hidden");
-} else {
-  if (authButtons) authButtons.classList.remove("hidden");
-  if (logoutBtn) logoutBtn.classList.add("hidden");
-}
+    if (authButtons) authButtons.classList.add("hidden");
+    if (logoutBtn) logoutBtn.classList.remove("hidden");
+  } else {
+    if (authButtons) authButtons.classList.remove("hidden");
+    if (logoutBtn) logoutBtn.classList.add("hidden");
+  }
 
-// Mostrar sempre o input do PDF
-if (input) input.classList.remove("hidden");
+  // Mostrar sempre o input do PDF
+  if (input) input.classList.remove("hidden");
 });
