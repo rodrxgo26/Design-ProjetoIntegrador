@@ -76,23 +76,6 @@ function showPdfResult(file) {
         </div>
       </div>
 
-      <!-- Botão animado -->
-      <button id="removePdf" class="button ml-4 mt-2" title="Remover PDF">
-        <div class="trash">
-          <div class="top">
-            <div class="paper"></div>
-          </div>
-          <div class="box"></div>
-          <div class="check">
-            <svg viewBox="0 0 8 6">
-              <polyline points="1 3.4 2.71428571 5 7 1"></polyline>
-            </svg>
-          </div>
-        </div>
-        <span>Remover PDF</span>
-      </button>
-    </div>
-
     <p class="mt-4 text-sm text-gray-400 italic">Esta é a área onde o resultado do teu programa será mostrado.</p>
   `;
 
