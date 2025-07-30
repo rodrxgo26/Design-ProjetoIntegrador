@@ -38,11 +38,16 @@ function showPdfResult(file) {
           <button id="analisarBtn" class="mt-4 px-5 py-2 border border-accent bg-accent text-white font-semibold rounded-lg shadow-md hover:bg-lightHighlight dark:hover:bg-darkHighlight transition">Analisar PDF</button>
         </div>
       </div>
-      <button id="removePdf" class="button ml-4 mt-2" title="Remover PDF"> ... botão animado ... </button>
+          <button id="removePdf" class="super-button" title="Remover PDF">
+  <svg class="icon" viewBox="0 0 24 24">
+    <path d="M18 6L6 18M6 6l12 12" />
+  </svg>
+</button>
+
     </div>
   `;
 
-  document.getElementById("file-name").textContent = `📄 ${file.name}`;
+  document.getElementById("file-name").textContent = "";
   currentPdfFile = file;
 
   document.getElementById("analisarBtn")?.addEventListener("click", () => {
@@ -50,15 +55,18 @@ function showPdfResult(file) {
   });
 
   document.getElementById("removePdf")?.addEventListener("click", (e) => {
-    const btn = e.currentTarget;
-    if (!btn.classList.contains("delete")) {
-      btn.classList.add("delete");
-      setTimeout(() => {
-        btn.classList.remove("delete");
-        resetUI();
-      }, 1500);
-    }
-  });
+  const btn = e.currentTarget;
+
+  if (!btn.classList.contains("delete")) {
+    btn.classList.add("delete");
+
+    setTimeout(() => {
+      btn.classList.remove("delete");
+      resetUI();
+    }, 700); // tempo da animação
+  }
+});
+
 }
 
 function analisarPdf(file) {
